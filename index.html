@@ -38,6 +38,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </style>
 </head>
 <body>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 <div id="hc"></div>
 <div class="letter" id="letter">
   <span class="corner" style="top:13px;left:14px">&#9829;</span>
@@ -54,9 +57,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="salute">hi reanne,</div>
 
-  <p class="para">i've been wanting to say this for a while now and i just needed you to hear it.</p>
+  <p class="para">i've been wanting to say this (and ive also been kinda already been saying this) for a while now and i just want you to hear it, in a diff way naman other than just text hehe.</p>
 
-  <p class="para">i love you. genuinely, deeply, and more than i probably say out loud. you mean so much to me and i never want you to forget that, not even for a second.</p>
+  <p class="para">i love you sososo much. genuinely, deeply, and more than i probably say out loud. you mean so much to me and i never want you to forget that, not even for a sec!!</p>
 
   <p class="para">lately i know i've been slipping back into old habits. when i get stressed, i shut down or i lash out, and i hate that you end up on the receiving end of that. it's not okay and it's not who i want to be with you. you deserve someone who talks to you, not at you, and i'm working on that every single day.</p>
 
@@ -65,7 +68,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <p class="para">i just want to be better for you, because you deserve all of it.</p>
 
   <div class="sign">
-    <div class="sign-label">always yours,</div>
+    <div class="sign-label">yours always,</div>
     <div class="sign-name" id="signName">&#9829;</div>
   </div>
 
@@ -124,6 +127,18 @@ function triggerSurprise(){
 
 burst(14);
 setInterval(spawnHeart, 2000);
+
+const music = document.getElementById("bgMusic");
+
+// try autoplay
+window.addEventListener("load", () => {
+  music.play().catch(() => {});
+});
+
+// fallback on first click
+window.addEventListener("click", () => {
+  music.play();
+}, { once: true });
 </script>
 </body>
 </html>
